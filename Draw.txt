@@ -1,0 +1,42 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JFrame; 
+import javax.swing.JPanel;
+
+public class Draw extends JPanel 
+{
+    public void paintComponent(Graphics g)
+    {
+        super.paintComponent(g); //
+        g.setColor(Color.RED);
+        g.drawRect(100, 10, 30, 40);
+        g.fillRect(90, 20, 40, 50);
+        
+        g.setColor(Color. BLUE);
+        g.drawOval(100, 100, 50, 50); 
+        g.fillOval(100, 100, 50, 50);
+        
+        g.setColor(Color.BLACK);
+        g.drawLine(10, 10, 30, 30);
+        
+        g.setColor(Color.RED);
+        g.drawArc(100, 100, 100, 100, 30, 40);
+        
+        g.setColor(Color.BLUE);
+        g.draw3DRect(500, 500, 500, 500, true);
+    }
+    
+    public static void main(String[] args)
+    {
+        Draw d = new Draw();
+        
+        JFrame jf = new JFrame();
+        
+        jf.setTitle("Dick");
+        jf.setSize(600, 400);
+        jf.setVisible(true);
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.add(d);
+    }
+}
+
